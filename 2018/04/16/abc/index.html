@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-  <html class="light page-post">
+  <html class="dark page-post">
 
 
 <head>
@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="猪小张的温暖被窝">
 <meta property="og:description" content="目录 (Table of Contents) [TOC] URLlib21urlopen(url, data, timeout)   第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。 第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT    GET">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T17:17:56.522Z">
+<meta property="og:updated_time" content="2018-04-16T18:41:30.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫学习笔记">
 <meta name="twitter:description" content="目录 (Table of Contents) [TOC] URLlib21urlopen(url, data, timeout)   第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。 第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT    GET">
@@ -185,7 +185,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#URLlib2"><span class="toc-text">URLlib2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GET"><span class="toc-text">GET</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#POST"><span class="toc-text">POST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置headers"><span class="toc-text">设置headers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Proxy-代理"><span class="toc-text">设置Proxy(代理)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Timeout"><span class="toc-text">设置Timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP的-PUT-和-DELETE-方法"><span class="toc-text">HTTP的 PUT 和 DELETE 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DebugLog"><span class="toc-text">DebugLog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URLError网络异常捕捉"><span class="toc-text">URLError网络异常捕捉</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTPError"><span class="toc-text">HTTPError</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#URLlib2"><span class="toc-text">URLlib2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GET"><span class="toc-text">GET</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#POST"><span class="toc-text">POST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置headers"><span class="toc-text">设置headers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#另外headers的一些属性"><span class="toc-text">另外headers的一些属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Proxy-代理"><span class="toc-text">设置Proxy(代理)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Timeout"><span class="toc-text">设置Timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP的-PUT-和-DELETE-方法"><span class="toc-text">HTTP的 PUT 和 DELETE 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DebugLog"><span class="toc-text">DebugLog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URLError网络异常捕捉"><span class="toc-text">URLError网络异常捕捉</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTPError"><span class="toc-text">HTTPError</span></a></li></ol></li></ol>
   </div>
 
 
@@ -261,7 +261,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import urllib</span><br><span class="line">import urllib2</span><br><span class="line">url = &apos;http://https://www.baidu.com/&apos;</span><br><span class="line">user_agent = &apos;Mozilla/5.0 (Windows NT 6.1; Win64; x64)&apos;</span><br><span class="line">values = &#123;&apos;username&apos;:&apos;username&apos;,&apos;password&apos;:&apos;password&apos;&#125;</span><br><span class="line">headers = &#123;&apos;User-Agent&apos;:user_agent&#125;</span><br><span class="line">data = urllib.urlencode(values)</span><br><span class="line">request = urllib2.Request(url, data, headers)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line">print response.read()</span><br></pre></td></tr></table></figure>
 <p>　　在对付防盗链时，服务器会识别 headers 中的 Referer 是不是它自己，如果不是，有的服务器不会响应，所以一般还应在 headers 中加入 referer：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 6.1; Win64; x64)&apos;,&apos;Referer&apos;:&apos;https://www.baidu.com/&apos;&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>####另外headers的一些属性<blockquote>
+<li><h4 id="另外headers的一些属性"><a href="#另外headers的一些属性" class="headerlink" title="另外headers的一些属性"></a>另外headers的一些属性</h4><blockquote>
 <ul>
 <li>User-Agent : 有些服务器或 Proxy 会通过该值来判断是否是浏览器发出的请求</li>
 <li>Content-Type : 在使用 REST 接口时，服务器会检查该值，用来确定 HTTP Body 中的内容该怎样解析。</li>
@@ -369,7 +369,7 @@
     <a class="show pull-left" href="/2018/04/14/abc/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="hide pull-right" href="/">
+    <a class="show pull-right" href="/2018/04/19/selenium-chromedriver执行报错解决方案/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
