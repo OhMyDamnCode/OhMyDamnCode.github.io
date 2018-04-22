@@ -23,13 +23,13 @@
 <meta property="og:site_name" content="猪小张的温暖被窝">
 <meta property="og:description" content="最近在学习 Python 爬虫，在用 selenium 调用 chromedriver 时，总是出现报错：  执行代码：  12345from selenium import webdriverimport osdriver = webdriver.Chrome()url = &amp;quot;http://www.baidu.com&amp;quot;driver.get(url) 　　我的 driver">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/chromedriver_error.jpg">
-<meta property="og:image" content="http://yoursite.com/images/chromedriver_test.jpg">
-<meta property="og:updated_time" content="2018-04-19T14:16:49.324Z">
+<meta property="og:image" content="http://p7kfdqgx5.bkt.clouddn.com/chromedriver_error.jpg">
+<meta property="og:image" content="http://p7kfdqgx5.bkt.clouddn.com/chromedriver_test.jpg">
+<meta property="og:updated_time" content="2018-04-22T02:58:48.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="selenium+chromedriver执行报错解决方案 ">
 <meta name="twitter:description" content="最近在学习 Python 爬虫，在用 selenium 调用 chromedriver 时，总是出现报错：  执行代码：  12345from selenium import webdriverimport osdriver = webdriver.Chrome()url = &amp;quot;http://www.baidu.com&amp;quot;driver.get(url) 　　我的 driver">
-<meta name="twitter:image" content="http://yoursite.com/images/chromedriver_error.jpg">
+<meta name="twitter:image" content="http://p7kfdqgx5.bkt.clouddn.com/chromedriver_error.jpg">
 
   
 
@@ -234,14 +234,15 @@
 
   <div class="article-content">
     
-      <p>　　最近在学习 Python 爬虫，在用 selenium 调用 chromedriver 时，总是出现报错：<br><img src="/images/chromedriver_error.jpg" width="600" height="800"></p>
+      <p>　　最近在学习 Python 爬虫，在用 selenium 调用 chromedriver 时，总是出现报错：<br><img src="http://p7kfdqgx5.bkt.clouddn.com/chromedriver_error.jpg" alt="image"></p>
 <blockquote>
 <p>执行代码：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">import os</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">url = &quot;http://www.baidu.com&quot;</span><br><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
 <p>　　我的 driver 版本和 Chrome 版本都匹配着，也添加了系统变量，网上查了很多，一直找不到问题在哪里，最后自己调试了半天，终于发现：</p>
 <h1 id="chromedriver-exe-文件需要和程序在同一个目录下！！！"><a href="#chromedriver-exe-文件需要和程序在同一个目录下！！！" class="headerlink" title="chromedriver.exe 文件需要和程序在同一个目录下！！！"></a>chromedriver.exe 文件需要和程序在同一个目录下！！！</h1><p>　　之前我的程序一直放在桌面，chromedriver.exe 在 C:\Profram File (x86)\Google\Chrome\Aplication ，每次执行是执行都会报错，自从我把他们放在同一个文件夹后，再也不用担心报错啦！</p>
-<img src="/images/chromedriver_test.jpg" width="600" height="800">
+<p><img src="http://p7kfdqgx5.bkt.clouddn.com/chromedriver_test.jpg" alt="image"></p>
+
     
   </div>
 
